@@ -33,3 +33,30 @@ def plot_class_distribution(labels):
 
     plt.bar(idx, counts)
     plt.show()
+
+def get_num_words_per_sample(sample_texts):
+    """Get the number of words per sample.
+
+    Arguments:
+        sample_texts {list} -- sample texts.
+    """
+    word_lens = []
+
+    for text in sample_texts:
+        word_lens.append(len(text))
+
+    return np.median(word_lens)
+
+def plot_frequency_distribution_of_ngrams(sample_texts,
+                                          ngram_range=(1, 2),
+                                          num_ngrams=50):
+    pass
+
+def plot_sample_length_distribution(sample_texts):
+    pass
+
+def main():
+    plot_class_distribution([0, 1])
+
+if __name__ == "__main__":
+    main()
