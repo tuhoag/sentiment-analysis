@@ -48,7 +48,10 @@ def train_ngram_model(data,
         callbacks=callbacks)
 
     history = history.history
+    val_acc = history['val_acc'][-1]
+    val_loss = history['val_loss'][-1]
+
     print('Validation accuracy: {acc}, loss: {loss}'.format(
-            acc=history['val_acc'][-1], loss=history['val_loss'][-1]))
+            acc=val_acc, loss=val_loss))
 
-
+    return val_loss, val_acc
